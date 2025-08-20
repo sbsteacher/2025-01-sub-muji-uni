@@ -12,7 +12,6 @@ import java.time.LocalDate;
 @Entity
 @Getter
 @Setter
-@DynamicInsert
 @EqualsAndHashCode
 public class Professor {
     @Id
@@ -31,6 +30,12 @@ public class Professor {
     private LocalDate hireDate;
 
     @Column(nullable = false, length = 20)
-    @ColumnDefault("'재직'")
     private String status;
+
+    //save시점에 한 번 실행이 되는 메소드
+    @PrePersist
+    public void prePersist() {
+        this.status = "재직";
+    }
 }
+
