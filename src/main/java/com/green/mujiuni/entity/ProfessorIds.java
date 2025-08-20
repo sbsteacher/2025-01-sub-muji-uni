@@ -13,5 +13,5 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class ProfessorIds implements Serializable {
     private Long userId;
-
+    private Long deptId;
 }

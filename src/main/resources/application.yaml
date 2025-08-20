@@ -21,3 +21,6 @@ spring:
         format_sql: true
         order_updates: true
         show_sql: true
+  sql:
+    init:
+      mode: always

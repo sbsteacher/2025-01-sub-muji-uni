@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 @Entity
 @Getter
@@ -26,9 +29,12 @@ public class Department {
     @Column(nullable = false, length = 50)
     private String deptOffice;
 
+    @Column(nullable = false, length = 50)
+    private String deptTel;
+
     @Column(nullable = false)
     private int deptMaxStd;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 50, unique = true)
     private String deptCode;
 }
