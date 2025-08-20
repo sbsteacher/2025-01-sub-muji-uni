@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @EqualsAndHashCode
 public class Professor {
     @Id
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private User user;
 
