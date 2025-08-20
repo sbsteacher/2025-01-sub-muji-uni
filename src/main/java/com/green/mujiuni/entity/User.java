@@ -34,8 +34,8 @@ public class User extends UpdatedAt{
     @Column(nullable = false, length = 1)
     private String gender;
 
-    @Column(nullable = false, length = 100)
-    private String address;
+    @Embedded
+    private Address address;
 
     @Column(nullable = false, length = 50, unique = true)
     private String email;
@@ -49,6 +49,5 @@ public class User extends UpdatedAt{
     @Column(length = 50)
     private String account;
 
-    @Column(nullable = false, length = 255)
-    private String addDetail;
+
 }
