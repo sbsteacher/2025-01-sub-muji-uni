@@ -15,18 +15,13 @@ import java.time.LocalDate;
 @DynamicInsert
 @EqualsAndHashCode
 public class Professor {
-
-    @EmbeddedId
-    private ProfessorIds professorIds;
-
+    @Id
     @OneToOne
     @JoinColumn(name = "user_id")
-    @MapsId("userId")
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "dept_id")
-    @MapsId("deptId")
     private Department department;
 
     @Column(nullable = false)
