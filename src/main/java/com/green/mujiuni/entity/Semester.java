@@ -1,6 +1,7 @@
 package com.green.mujiuni.entity;
 
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +20,7 @@ import java.time.Year;
         ),
     }
 )
+@EqualsAndHashCode
 public class Semester {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
