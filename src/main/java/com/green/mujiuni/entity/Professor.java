@@ -34,8 +34,10 @@ public class Professor {
 
     //save시점에 한 번 실행이 되는 메소드
     @PrePersist
-    public void prePersist() {
-        this.status = "재직";
+    public void prePersist() { //default 처리는 무조건 이걸로
+        if(this.status == null) {
+            this.status = "재직";
+        }
     }
 }
 
